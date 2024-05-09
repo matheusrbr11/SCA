@@ -9,12 +9,12 @@ class ScaListView(ListView):
     
 class ScaCreateView(CreateView):
     model = Sca
-    fields = ["nome", "cpf", "matricula", "curso"]
+    fields = ["nome", "cpf", "matricula", "disciplinas","curso"]
     success_url = reverse_lazy("sca_list")
     
 class ScaUpdateView(UpdateView):
     model = Sca
-    fields = fields = ["nome", "cpf", "matricula", "curso"]
+    fields = fields = ["nome", "cpf", "matricula", "disciplinas", "curso"]
     success_url = reverse_lazy("sca_list")
     
 class ScaDeleteView(DeleteView):
