@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block page_title %}Cadastro de Alunos{% endblock page_title %}
+
+{% block content %}
+    <h1>Cadastro de Alunos</h1>
+
+    {% if sca_list %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">Matricula</th>
+                <th scope="col">Curso</th>
+                <th scope="col">Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for sca in sca_list %}
+                    <tr>
+                        <th scope="row">{{ sca.pk }}</th>
+                        <td>{{ sca.nome }}</td>
+                        <td>{{ sca.cpf }}</td>
+                        <td>{{ sca.matricula }}</td>
+                        <td>{{ sca.curso }}</td>
+                        <td>
+                            <a href="{% url 'sca_update' pk=sca.pk %}" class="btn btn-secondary btn-sm">Editar</a>
+                            <a href="{% url 'sca_delete' pk=sca.pk %}" class="btn btn-danger btn-sm">Excluir</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Não há alunos cadastradas</p>
+    {% endif %}
+
+    <a href="{% url 'sca_create' %}" class="btn btn-primary">Novo Aluno</a>
+{% endblock content %}

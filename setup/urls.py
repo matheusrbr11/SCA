@@ -17,14 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from todos.views import TodoListView, TodoCreateView, TodoUpdateView, TodoDeleteView, TodoCompleteView
+from sca.views import ScaListView, ScaCreateView, ScaUpdateView, ScaDeleteView
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", TodoListView.as_view(), name ="todo_list"),
-    path("create", TodoCreateView.as_view(), name="todo_create"),
-    path("update/<int:pk>", TodoUpdateView.as_view(), name="todo_update"),
-    path("delete/<int:pk>", TodoDeleteView.as_view(), name="todo_delete"),
-    path("complete/<int:pk>", TodoCompleteView.as_view(), name="todo_complete"),
+    path("", ScaListView.as_view(), name ="sca_list"),
+    path("create", ScaCreateView.as_view(), name="sca_create"),
+    path("update/<int:pk>", ScaUpdateView.as_view(), name="sca_update"),
+    path("delete/<int:pk>", ScaDeleteView.as_view(), name="sca_delete"),
 ]

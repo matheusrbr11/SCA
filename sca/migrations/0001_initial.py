@@ -10,7 +10,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name="Todo",
+            name="Sca",
             fields=[
                 (
                     "id",
@@ -21,10 +21,10 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("title", models.CharField(max_length=100)),
-                ("created_at", models.DateTimeField(auto_now_add=True)),
-                ("deadline", models.DateTimeField()),
-                ("finished_at", models.DateTimeField(null=True)),
+                ("nome", models.CharField(max_length=100)),
+                ("cpf", models.CharField(max_length=11)),
+                ("matricula", models.CharField(max_length=12)),
+                ("curso", models.CharField(max_length=100)),
             ],
         ),
     ]

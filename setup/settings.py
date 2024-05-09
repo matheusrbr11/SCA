@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "todos.apps.TodosConfig",
+    "sca.apps.ScaConfig",
     "crispy_forms",
     "crispy_bootstrap5",
 ]
