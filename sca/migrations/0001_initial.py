@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="Sca",
             fields=[
-                ("id", models.BigAutoField(auto_created=True,serialize=False,verbose_name="ID")),
+                ("id", models.IntegerField(auto_created=True,serialize=False,verbose_name="ID")),
                 ("nome", models.CharField(max_length=100)),
                 ("cpf", models.CharField(max_length=11,primary_key=True)),
                 ("matricula", models.CharField(max_length=12)),
